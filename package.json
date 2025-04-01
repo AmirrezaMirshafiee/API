@@ -1,0 +1,22 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "A comprehensive HTTP client package for JavaScript that combines native fetch simplicity with advanced features such as timeout management, retry with exponential backoff, internal caching, interceptors, authentication, progress events, and user-friendly error handling.",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "http",
+    "api",
+    "fetch",
+    "axios",
+    "retry",
+    "caching",
+    "interceptors",
+    "progress",
+    "authentication"
+  ],
+  "author": "Amirreza Mirshafiee  amirrezamirshafiee0@gmail.com",
+  "license": "MIT"
+}
