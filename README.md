@@ -58,15 +58,49 @@ The **apizone** package is a unified HTTP client built on the native `fetch` API
 
 ---
 
-## 3. 📝 Installation
+## 📝 Installation
 
-To install the **apizone** package via npm, run:
+You can install **apizone** using various package managers:
 
+### Using npm:
 ```bash
 npm install apizone
 ```
 
----
+### Using Bower:
+```bash
+bower install apizone
+```
+
+### Using Yarn:
+```bash
+yarn add apizone
+```
+
+### Using pnpm:
+```bash
+pnpm add apizone
+```
+
+### Using Bun:
+```bash
+bun add apizone
+```
+
+### CDN Links
+
+You can also use **apizone** directly in the browser via CDN:
+
+- **unpkg:**
+```html
+<script src="https://unpkg.com/apizone@latest/dist/index.js"></script>
+```
+
+- **jsDelivr:**
+```html
+<script src="https://cdn.jsdelivr.net/npm/apizone@latest/dist/index.js"></script>
+```
+
 
 ## 4. ⏱️ Quick Start
 
