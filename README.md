@@ -1,6 +1,6 @@
-# apizoe
+# apizone
 
-**apizoe** is a comprehensive HTTP client package for JavaScript that combines the native simplicity of fetch with advanced features similar to Axios—and adds extra capabilities for robust HTTP communication. With apizoe, you get:
+**apizone** is a comprehensive HTTP client package for JavaScript that combines the native simplicity of fetch with advanced features similar to Axios—and adds extra capabilities for robust HTTP communication. With apizone, you get:
 
 - ⏱️ **Timeout management:** Automatically cancel requests if no response is received within a specified time (using AbortController).
 - ♻️ **Retry with exponential backoff:** Automatically retry failed requests with an exponentially increasing delay.
@@ -40,7 +40,7 @@ This package is designed to help you build robust, flexible, and high-performanc
 
 ## 1. 📚 Introduction
 
-The **apizoe** package is a unified HTTP client built on the native `fetch` API. It augments basic fetch functionality with advanced features like automatic retries with exponential backoff, internal caching, progress event support, request/response interceptors, timeout management using AbortController, and friendly error messages based on HTTP status codes. Additionally, it supports all standard HTTP methods.
+The **apizone** package is a unified HTTP client built on the native `fetch` API. It augments basic fetch functionality with advanced features like automatic retries with exponential backoff, internal caching, progress event support, request/response interceptors, timeout management using AbortController, and friendly error messages based on HTTP status codes. Additionally, it supports all standard HTTP methods.
 
 ---
 
@@ -60,45 +60,45 @@ The **apizoe** package is a unified HTTP client built on the native `fetch` API.
 
 ## 📝 Installation
 
-You can install **apizoe** using various package managers:
+You can install **apizone** using various package managers:
 
 ### Using npm:
 ```bash
-npm install apizoe
+npm install apizone
 ```
 
 ### Using Bower:
 ```bash
-bower install apizoe
+bower install apizone
 ```
 
 ### Using Yarn:
 ```bash
-yarn add apizoe
+yarn add apizone
 ```
 
 ### Using pnpm:
 ```bash
-pnpm add apizoe
+pnpm add apizone
 ```
 
 ### Using Bun:
 ```bash
-bun add apizoe
+bun add apizone
 ```
 
 ### CDN Links
 
-You can also use **apizoe** directly in the browser via CDN:
+You can also use **apizone** directly in the browser via CDN:
 
 - **unpkg:**
 ```html
-<script src="https://unpkg.com/apizoe@latest/dist/index.js"></script>
+<script src="https://unpkg.com/apizone@latest/dist/index.js"></script>
 ```
 
 - **jsDelivr:**
 ```html
-<script src="https://cdn.jsdelivr.net/npm/apizoe@latest/dist/index.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/apizone@latest/dist/index.js"></script>
 ```
 
 
@@ -107,7 +107,7 @@ You can also use **apizoe** directly in the browser via CDN:
 Here’s a basic example to get you started:
 
 ```js
-import API from 'apizoe';
+import API from 'apizone';
 
 const api = new API({
   baseURL: "https://fakestoreapi.com",
@@ -312,7 +312,7 @@ const api = new API({
 ### Example 1: Fetching Products with Caching
 
 ```js
-import API from 'apizoe';
+import API from 'apizone';
 
 const api = new API({
   baseURL: "https://fakestoreapi.com",
@@ -335,7 +335,7 @@ getData();
 ### Example 2: Creating a New Product with Authentication
 
 ```js
-import API from 'apizoe';
+import API from 'apizone';
 
 const api = new API({
   baseURL: "https://fakestoreapi.com",
@@ -366,7 +366,7 @@ postData();
 
 ## 8. 👨‍💼 Contributing
 
-Contributions to **apizoe** are welcome! Please follow these steps:
+Contributions to **apizone** are welcome! Please follow these steps:
 
 1. ⭐ **Fork** the repository.  
 2. 🔧 **Create a feature branch** for your changes.  
