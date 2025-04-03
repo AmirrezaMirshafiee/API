@@ -1,6 +1,6 @@
 {
   "name": "apizone",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A comprehensive HTTP client package for JavaScript that combines native fetch simplicity with advanced features such as timeout management, retry with exponential backoff, internal caching, interceptors, authentication, progress events, and user-friendly error handling.",
   "main": "dist/index.js",
   "scripts": {
