@@ -1,6 +1,6 @@
-# apizone
+# apizoe
 
-**apizone** is a comprehensive HTTP client package for JavaScript that combines the native simplicity of fetch with advanced features similar to Axios—and adds extra capabilities for robust HTTP communication. With apizone, you get:
+**apizoe** is a comprehensive HTTP client package for JavaScript that combines the native simplicity of fetch with advanced features similar to Axios—and adds extra capabilities for robust HTTP communication. With apizoe, you get:
 
 - ⏱️ **Timeout management:** Automatically cancel requests if no response is received within a specified time (using AbortController).
 - ♻️ **Retry with exponential backoff:** Automatically retry failed requests with an exponentially increasing delay.
@@ -40,7 +40,7 @@ This package is designed to help you build robust, flexible, and high-performanc
 
 ## 1. 📚 Introduction
 
-The **apizone** package is a unified HTTP client built on the native `fetch` API. It augments basic fetch functionality with advanced features like automatic retries with exponential backoff, internal caching, progress event support, request/response interceptors, timeout management using AbortController, and friendly error messages based on HTTP status codes. Additionally, it supports all standard HTTP methods.
+The **apizoe** package is a unified HTTP client built on the native `fetch` API. It augments basic fetch functionality with advanced features like automatic retries with exponential backoff, internal caching, progress event support, request/response interceptors, timeout management using AbortController, and friendly error messages based on HTTP status codes. Additionally, it supports all standard HTTP methods.
 
 ---
 
@@ -60,45 +60,45 @@ The **apizone** package is a unified HTTP client built on the native `fetch` API
 
 ## 📝 Installation
 
-You can install **apizone** using various package managers:
+You can install **apizoe** using various package managers:
 
 ### Using npm:
 ```bash
-npm install apizone
+npm install apizoe
 ```
 
 ### Using Bower:
 ```bash
-bower install apizone
+bower install apizoe
 ```
 
 ### Using Yarn:
 ```bash
-yarn add apizone
+yarn add apizoe
 ```
 
 ### Using pnpm:
 ```bash
-pnpm add apizone
+pnpm add apizoe
 ```
 
 ### Using Bun:
 ```bash
-bun add apizone
+bun add apizoe
 ```
 
 ### CDN Links
 
-You can also use **apizone** directly in the browser via CDN:
+You can also use **apizoe** directly in the browser via CDN:
 
 - **unpkg:**
 ```html
-<script src="https://unpkg.com/apizone@latest/dist/index.js"></script>
+<script src="https://unpkg.com/apizoe@latest/dist/index.js"></script>
 ```
 
 - **jsDelivr:**
 ```html
-<script src="https://cdn.jsdelivr.net/npm/apizone@latest/dist/index.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/apizoe@latest/dist/index.js"></script>
 ```
 
 
@@ -107,16 +107,16 @@ You can also use **apizone** directly in the browser via CDN:
 Here’s a basic example to get you started:
 
 ```js
-import API from 'apizone';
+import API from 'apizoe';
 
 const api = new API({
   baseURL: "https://fakestoreapi.com",
-  timeout: 10000,
-  retry: 3,
-  retryDelay: 1000,
-  cache: true,
-  authToken: "your_jwt_token_here",
-});
+  timeout: 10000,    // 10 seconds timeout
+  retry: 3,          // Retry failed requests 3 times
+  retryDelay: 1000,  // Initial delay of 1000 ms; then 2000, 4000, etc.
+  cache: true,       // Enable internal caching for GET requests
+  authToken: "your_jwt_token_here", // Optional authentication token
+})
 
 const getData = async () => {
   try {
@@ -135,6 +135,7 @@ getData();
 ## 5. 📁 Usage
 
 ### 🔍 Setting Base URL
+Configure a base URL so that you only need to specify endpoint paths:
 
 ```js
 const api = new API({
@@ -143,6 +144,7 @@ const api = new API({
 ```
 
 ### ⏱️ Timeout
+Automatically cancel a request if no response is received within the specified duration:
 
 ```js
 const api = new API({
@@ -152,20 +154,26 @@ const api = new API({
 
 ### ♻️ Retry with Exponential Backoff
 
+Automatically retry failed requests with an exponentially increasing delay:
+
 ```js
 const api = new API({
-  retry: 3,
-  retryDelay: 1000,
+  retry: 3,         // Retry up to 3 times
+  retryDelay: 1000,  // 1000 ms initial delay; then 2000, 4000, etc.
 });
+
 ```
 
 ### 🗂️ Internal Caching for GET Requests
+
+Enable internal caching so that responses from GET requests are stored and reused:
 
 ```js
 await api.get("/products", { cache: true });
 ```
 
 ### 🛠️ Interceptors
+Add custom logic to modify or log request and response data.
 
 #### Request Interceptor:
 
@@ -187,6 +195,8 @@ api.addResponseInterceptor(async (response) => {
 
 ### 🔐 Authentication Token
 
+Automatically attach an authentication token to every request header.
+
 ```js
 const api = new API({
   authToken: "your_jwt_token_here",
@@ -194,6 +204,8 @@ const api = new API({
 ```
 
 ### 📊 Progress Events
+
+Monitor file upload or download progress using callback functions.
 
 ```js
 const formData = new FormData();
@@ -209,6 +221,8 @@ await api.post("/upload", formData, {
 
 ### ⚠️ User-friendly Error Handling
 
+Convert HTTP status codes into clear error messages for end users.
+
 ```js
 try {
   await api.get("/non-existent-endpoint");
@@ -220,14 +234,30 @@ try {
 
 ### ✉️ HTTP Methods
 
+The API supports all standard HTTP methods:
+
 ```js
+// GET
 await api.get("/products");
+
+// POST
 await api.post("/products", { title: "New Product", price: 29.99 });
+
+// PUT
 await api.put("/products/1", { title: "Updated Product", price: 19.99 });
+
+// PATCH
 await api.patch("/products/1", { price: 17.99 });
+
+// DELETE
 await api.delete("/products/1");
+
+// HEAD
 await api.head("/products");
+
+// OPTIONS
 await api.options("/products");
+
 ```
 
 ---
@@ -236,14 +266,19 @@ await api.options("/products");
 
 ### Custom Retry Behavior
 
+Customize the number of retries and delay between them:
+
 ```js
 const api = new API({
   retry: 5,
-  retryDelay: 500,
+  retryDelay: 500, // 500 ms initial delay; subsequent delays increase exponentially.
 });
+
 ```
 
 ### Interceptors for Logging or Data Manipulation
+
+Use interceptors to log or modify request and response data.
 
 ```js
 api.addRequestInterceptor(async (config) => {
@@ -252,17 +287,22 @@ api.addRequestInterceptor(async (config) => {
 });
 
 api.addResponseInterceptor(async (response) => {
+  // Optionally modify the response data
   return response;
 });
+
 ```
 
 ### Environment-Specific Settings
+
+Customize your configuration based on your environment (e.g., browser or Node.js).
 
 ```js
 const api = new API({
   baseURL: process.env.API_BASE_URL || "https://fakestoreapi.com",
   timeout: 10000,
 });
+
 ```
 
 ---
@@ -272,7 +312,7 @@ const api = new API({
 ### Example 1: Fetching Products with Caching
 
 ```js
-import API from 'apizone';
+import API from 'apizoe';
 
 const api = new API({
   baseURL: "https://fakestoreapi.com",
@@ -295,7 +335,7 @@ getData();
 ### Example 2: Creating a New Product with Authentication
 
 ```js
-import API from 'apizone';
+import API from 'apizoe';
 
 const api = new API({
   baseURL: "https://fakestoreapi.com",
@@ -326,7 +366,7 @@ postData();
 
 ## 8. 👨‍💼 Contributing
 
-Contributions to **apizone** are welcome! Please follow these steps:
+Contributions to **apizoe** are welcome! Please follow these steps:
 
 1. ⭐ **Fork** the repository.  
 2. 🔧 **Create a feature branch** for your changes.  
