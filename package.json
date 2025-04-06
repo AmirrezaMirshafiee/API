@@ -10,17 +10,19 @@
     "type": "git",
     "url": "https://github.com/AmirrezaMirshafiee/API.git"
   },
-  "keywords": [
-    "http",
-    "api",
-    "fetch",
-    "axios",
-    "retry",
-    "caching",
-    "interceptors",
-    "progress",
-    "authentication"
-  ],
+"keywords": [
+  "apizone",
+  "http-client",
+  "api",
+  "javascript",
+  "fetch",
+  "axios-alternative",
+  "retry",
+  "caching",
+  "interceptors",
+  "authentication",
+  "progress"
+],
   "author": "Amirreza Mirshafiee <amirrezamirshafiee0@gmail.com>",
   "license": "MIT"
 }
